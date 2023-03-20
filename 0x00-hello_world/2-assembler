@@ -1,6 +1,6 @@
 #!/bin/bash
 #include <stdio.h>
-gcc -S $CFILE
+
 /**
  * main - Entry point
  *
@@ -11,3 +11,4 @@ int main(void)
 	printf("Holberton School");
 	return (0);
 }
+gcc -S $CFILE
