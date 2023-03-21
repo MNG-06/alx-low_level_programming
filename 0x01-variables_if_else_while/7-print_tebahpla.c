@@ -9,7 +9,7 @@ int main(void)
 {
 	char ch;
 
-	for (ch = 'zyxwvutsrqponmlkjihgfedcba; ch--)
+	for (ch = 'zyxwvutsrqponmlkjihgfedcba'; ch--)
 	{
 		putchar(ch);
 	}
