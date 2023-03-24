@@ -8,7 +8,7 @@
   */
 void print_square(int size)
 {
-	int a, b;
+	int a, c;
 
 	if (size <= 0)
 	{
