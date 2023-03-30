@@ -8,25 +8,25 @@ include "main.h"
   */
 char *leet(char *s)
 {
-	int a = 0, b = 0, l = 5;
+	int i = 0, j = 0, k = 5;
 	char r[5] = {'A', 'E', 'O', 'T', 'L'};
 	char n[5] = {'4', '3', '0', '7', '1'};
 
-	while (s[a])
+	while (s[i])
 	{
-		b = 0;
+		j = 0;
 
-		while (b < l)
+		while (j < k)
 		{
-			if (s[a] == r[b] || s[a] - 32 == r[b])
+			if (s[i] == r[j] || s[i] - 32 == r[j])
 			{
-				s[a] = n[b];
+				s[i] = n[j];
 			}
 
-			b++;
+			j++;
 		}
 
-		a++;
+		i++;
 	}
 
 	return (s);
