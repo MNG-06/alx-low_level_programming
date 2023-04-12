@@ -4,6 +4,7 @@
 /**
  * free_grid - A function that frees a 2-D grid in alloc_grid 
  * @grid: 2-D
+ * Description: Freeing the grid's memory
  *
  * Return: Nothing.
  */
