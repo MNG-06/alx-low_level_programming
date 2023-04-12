@@ -27,8 +27,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (concat == NULL)
 		return (NULL);
-	n = sn;
-	sn = 0;
+	n = sn = 0;
 	while (s1[n] != '\0')
 	{
 		concat[n] = s1[n];
