@@ -6,11 +6,11 @@
  * @n: Is the number of all parameters
  * @...: A variable number to culculate the required sum
  * Return: If n == 0 - 0.
- * Otherwise - The sum of all parameters
+ *        Otherwise - The sum of all parameters
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list ap;
+	va_list (ap);
 	unsigned int x, sum = 0;
 
 	va_start(ap, n);
