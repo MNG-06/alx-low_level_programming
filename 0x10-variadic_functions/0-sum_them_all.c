@@ -11,14 +11,13 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list ap;
-  	unsigned int x;
+  	unsigned int x, sum = 0;
 
-  va_start(ap, arg1); 
-  for (x = arg1; x >= 0; x = va_arg(ap, unsigned int))
-    printf("%d ", sum);
+  va_start(ap, n); 
+  for (x = n; x >= 0; x = va_arg(ap, unsigned int))
+    printf("%d", sum);
   va_end(ap);
   putchar('\n');
-	va_end(ap);
 
 	return (sum);
 }
