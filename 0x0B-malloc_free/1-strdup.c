@@ -30,4 +30,3 @@ char *_strdup(char *str)
 
   return (newStr);
 }
-}
