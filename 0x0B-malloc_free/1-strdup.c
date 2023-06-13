@@ -4,7 +4,7 @@
 /**
  * a function that returns a pointer to a newly allocated space in memory
  * *p: A pointer to return
- * *str: A string with whic the pointer returns to
+ * str: A string with whic the pointer returns to
  *
  * Return: NULL if str = NULL
  */
