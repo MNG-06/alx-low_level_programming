@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * A function that creates an array of chars with initialized specific char
+ * simple_print_buffer - prints buffer in hexa
  * @buffer: the address of memory to print
  * @size: the size of the memory to print
  *
  * Return: Nothing.
  */
+
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
