@@ -1,3 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "dog.h"
+
+/**
+ * _strlen - Gets the length of the input string
+ * @str: String input
+ * Return: Number of indexes in a string
+ */
+int _strlen(char *str)
+{
+	int i;
+
 	for (i = 0; str[i]; i++)
 		;
 
