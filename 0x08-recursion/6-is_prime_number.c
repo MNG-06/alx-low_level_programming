@@ -29,7 +29,7 @@ int increment(int i, int j)
 		return (increment(i, j - 1));
 }
 /**
- * is_prime_number - a function that returns 1, if the input int is a prime number
+ * is_prime_number - a function that returns 1, if int is a prime number
  * @n: Original value
  * Return: Always 0.
  */
