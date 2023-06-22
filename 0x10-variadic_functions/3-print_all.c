@@ -8,6 +8,7 @@
  * @format: The data type being passed into the function
  * Return: Nothing
  */
+int main() {
 void print_all(const char * const format, ...)
 {
 	int i = 0;
@@ -48,4 +49,5 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(argument_input);
+}
 }
