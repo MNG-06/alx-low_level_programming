@@ -4,7 +4,7 @@
 
 /**
  * print_all - a function that prints anything.
- * as long as it is a character, integer, float, or string
+ * all: as long as it is a character, integer, float, or string
  * @format: The data type being passed into the function
  * Return: Nothing
  */
