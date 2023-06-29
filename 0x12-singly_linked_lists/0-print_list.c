@@ -1,8 +1,8 @@
-#include <stdio.h>
+//#include <stdio.h>
 #include "lists.h"
 
 /**
- * print_list - a function that prints all the elements of a list.
+ * print_list - Printing all the elements of a list.
  * @h: Pointer to a linked list head.
  * Return: The number of total nodes in the linked list.
  */
