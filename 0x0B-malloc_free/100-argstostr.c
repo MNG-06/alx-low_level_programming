@@ -12,48 +12,48 @@
 
 char *argstostr(int ac, char **av)
 {
-		char *new_string = NULL;
-		int k = 0, i = ac, j, sum = 0, temp = 0;
+		int len;
+	int i;
+	int x;
+	int j;
+	char *heap_array;
 
-		if (ac == 0 || av == NULL)
-			return (NULL);
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	len = length(ac, av);
+	heap_array = malloc(len + 1);
 
-		while (ac--)
-			sum += (len(av[ac]) + 1);
-		new_string = (char *) malloc(sum + 1);
-
-		if (new_string != NULL)
+	for (x = 0, i = 0; i < ac; i++, x++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++, x++)
 		{
-			while (k < i)
-			{
-				for (j = 0; av[k][j] != '\0'; j++)
-					new_string[j + temp] = av[k][j];
-				new_string[temp + j] = '\n';
-				temp += (j + 1);
-				k++;
-			}
-			new_string[temp] = '\0';
+			heap_array[x] = av[i][j];
 		}
-		else
-		{
-			return (NULL);
-		}
-		return (new_string);
+		heap_array[x] = '\n';
+	}
+	heap_array[x] = '\0';
+	return (heap_array);
 }
 
 /**
-*len - returns length of str
-*@str: string counted
-*Return: returns the length
-*/
-int len(char *str)
+ * length -  Calcualtes the length
+ * @ac: Counter for arguments
+ * @av: Array of values
+ * Return: A the total amount of characters on the string
+ */
+int length(int ac, char **av)
 {
-		int len = 0;
+	int i;
+	int j;
+	int counter;
 
-		if (str != NULL)
+	counter = 0;
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			while (str[len])
-				len++;
+			counter++;
 		}
-	return (len);
+	}
+	return (counter + ac);
 }
