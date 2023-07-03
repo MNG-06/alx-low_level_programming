@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+int length(int ac, char **av);
 
 /**
 * argstostr - A function that concatenates all the arg of the program
