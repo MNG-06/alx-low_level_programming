@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * _strdup - a function that returns a pointer to a newly allocated space in memory.
+ * _strdup - a function that returns a pointer to a new memory location.
  * @str: String to be duplicated
  * Return: NULL if not enough space in memory otherwise a pointer
  * to the beginning of the array
