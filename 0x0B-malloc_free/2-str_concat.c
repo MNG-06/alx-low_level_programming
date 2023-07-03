@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-int len(char *str);
 
 **
  * str_concat - A function that concatenates two strings.
@@ -12,53 +11,28 @@ int len(char *str);
 
 char *str_concat(char *s1, char *s2)
 {
-	int i;
-	int s1_len;
-	int s2_len;
-	char *heap_array;
+	char *concat_str;
+	int index, concat_index = 0,  len = 0;
 
 	if (s1 == NULL)
-		s1 = '\0';
+		s1 = "";
 
 	if (s2 == NULL)
-		s2 = '\0';
-	s1_len = len(s1);
-	s2_len = len(s2);
+		s2 = "";
 
-	heap_array = malloc(s1_len + s2_len + 1);
-	if (heap_array == NULL)
+	for (index = 0; s1[index] || s2[index]; index++)
+		len++;
+
+	concat_str = malloc(sizeof(char) * len);
+
+	if (concat_str == NULL)
 		return (NULL);
-	for (i = 0; i < s1_len; i++)
-	{
-		if (s1_len <= 0)
-			heap_array[i] = '\0';
-		else
-			heap_array[i] = s1[i];
-	}
-	for (i = 0; i < s2_len; i++, s1_len++)
-	{
-		if (s2_len <= 0)
-			heap_array[s1_len] = '\0';
-		else
-			heap_array[s1_len] = s2[i];
-	}
-	heap_array[s1_len] = '\0';
-	return (heap_array);
-}
 
-/**
- * len - Calculating the length of a string
- * @str: String to calculate len
- * Return: Integer with the size of the string if NULL returns 0
- */
+	for (index = 0; s1[index]; index++)
+		concat_str[concat_index++] = s1[index];
 
-int len(char *str)
-{
-	int i;
+	for (index = 0; s2[index]; index++)
+		concat_str[concat_index++] = s2[index];
 
-	if (str == NULL)
-		return (0);
-	for (i = 0; str[i] != '\0'; i++)
-	{}
-	return (i);
+	return (concat_str);
 }
