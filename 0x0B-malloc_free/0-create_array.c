@@ -12,12 +12,16 @@
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
+	char *heap_array;
+
 	if (size == 0)
 		return (NULL);
-
-	char *s;
-	s = (char*) malloc(size * sizeof(char));
+	heap_array = malloc(size);
+	if (heap_array == NULL)
+		return (NULL);
 	for (i = 0; i < size; i++)
-		s[i] = c;
-	return (s);
+	{
+		heap_array[i] = c;
+	}
+	return (heap_array);
 }
