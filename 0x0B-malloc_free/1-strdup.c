@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-int len(char *str);
 
 /**
  * _strdup - a function that returns a pointer to a new memory location.
