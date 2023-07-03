@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "main.h"
 
-
 /**
 * _realloc - reallocates a memory block
 * @ptr: pointer to the memory previously allocated with a call to malloc
@@ -14,33 +13,27 @@
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *temp_block;
 	unsigned int i;
+	char *pt;
+	char *heap_array;
 
-	if (ptr == NULL)
-	{
-		temp_block = malloc(new_size);
-		return (temp_block);
-	}
-	else if (new_size == old_size)
+	if (new_size == old_size)
 		return (ptr);
-
-	else if (new_size == 0 && ptr != NULL)
+	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
-	else
+	/*Casting a void* to a char* */
+	pt = (char *)ptr;
+	heap_array = malloc(sizeof(char) * new_size);
+	if (heap_array == NULL)
+		return (NULL);
+	if (ptr != NULL)
 	{
-		temp_block = malloc(new_size);
-		if (temp_block != NULL)
-		{
-			for (i = 0; i < min(old_size, new_size); i++)
-				*((char *)temp_block + i) = *((char *) ptr + i);
-			free(ptr);
-			return (temp_block);
-		}
-		else
-			return (NULL);
+		for (i = 0; i < old_size; i++)
+			heap_array[i] = pt[i];
 	}
+	free(ptr);
+	return (heap_array);
 }
