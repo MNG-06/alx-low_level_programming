@@ -40,7 +40,7 @@ int **alloc_grid(int width, int height)
 			}
 		}
 		return (array);
-}
+	}
 	else
 	{
 		return (NULL);
