@@ -2,31 +2,29 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * a function that returns a pointer to a newly allocated space in memory
- * *p: A pointer to return
- * str: A string with whic the pointer returns to
- *
- * Return: NULL if str = NULL
+ * _strdup - a function that returns a pointer to a newly allocated space in memory.
+ * @str: String to be duplicated
+ * Return: NULL if not enough space in memory otherwise a pointer
+ * to the beginning of the array
  */
 
 char *_strdup(char *str)
 {
-  int i = 0, j, k = 0;
-  char *newStr = NULL;
+  int len;
+	int i;
+	char *heap_array;
 
-  while (str[k] != '\0')
-    {
-      i++;
-      k++;
-    }
-
-  newStr = malloc(sizeof(char) * (i + 1));
-
-  if (str == NULL)
-    return (NULL);
-
-  for (j = 0; j <= i; j++)
-    newStr[j] = str[j];
-
-  return (newStr);
+	if (str == NULL)
+		return (NULL);
+	for (len = 0; str[len] != '\0'; len++)
+	{}
+	heap_array = malloc(len + 1);
+	if (heap_array == NULL)
+		return (NULL);
+	for (i = 0; i < len ; i++)
+	{
+		heap_array[i] = str[i];
+	}
+	heap_array[i] = '\0';
+	return (heap_array);
 }
