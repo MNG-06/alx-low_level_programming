@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-int len(char *str);
 
 **
  * str_concat - A function that concatenates two strings.
