@@ -1,37 +1,42 @@
+#include <stdio.h>
 #include "main.h"
 
-int check_prime(int n, int i);
-
 /**
- * is_prime_number - Return only if its a prime number
- * @n: the number to be examined
- *
- * Return: 1 if n is prime or 0 if not
+ * variableHolder - Holds a value to avoid recursion
+ * @num: Holds a value
+ * Return: The value minus 1
  */
-int is_prime_number(int n)
+int variableHolder(int num)
 {
-	if (n <= 1)
-		return (0);
-	return (prime_number(n, n - 1);
+	num--;
+
+	return (num);
 }
 
 /**
- * check_prime - Checking if its a prime number
- * @n: the number to be examined
- * @i: the iterator
- *
- * Return: 1 if n prime or 0 if not
+ * increment - Loops through itself to determine if the value is a prime number
+ * @i: Original value
+ * @j: Original value, divided by 2 and rounded down for comparison
+ * Return: 1 if prime number, 0 if not
  */
-int prime_number(int n, int i)
+int increment(int i, int j)
 {
-	if (n <= 1)
-		return (0);
-
-	if (n % i == 0 && i > 1)
-		return (0);
-
-	if ((n / i) < i)
+	if (variableHolder(j) == 1)
 		return (1);
-
-	return (prime_number(n, i + 1));
+	else if (i % variableHolder(j) == 0)
+		return (0);
+	else
+		return (increment(i, j - 1));
+}
+/**
+ * is_prime_number - a function that returns 1, if int is a prime number
+ * @n: Original value
+ * Return: Always 0.
+ */
+int is_prime_number(int n)
+{
+	if (n == 0 || n == 1 || n == -1 || n % 2 == 0)
+		return (0);
+	else
+		return ((increment(n, n / 2)));
 }

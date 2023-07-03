@@ -1,23 +1,23 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#include "main.h"
 /**
- * create_array - Create an array of chars, and assign it with a specific char
- * @size: size of an array
- * @c: char to be assigned
+ * simple_print_buffer - prints buffer in hexa
+ * @buffer: the address of memory to print
+ * @size: the size of the memory to print
  *
- * Return: Returns a pointer to the array, or NULL if it fails,
+ * Return: Nothing.
  */
+
 char *create_array(unsigned int size, char c)
 {
-	char *str;
-	unsigned int n;
-
-	str = malloc(sizeof(char) * size);
-	if (size == 0 || str == NULL)
+	unsigned int i;
+	if (size == 0)
 		return (NULL);
 
-	for (n = 0; n < size; n++)
-		str[n] = c;
-	return (str);
+	char *s;
+	s = (char*) malloc(size * sizeof(char));
+	for (i = 0; i < size; i++)
+		s[i] = c;
+	return (s);
 }
