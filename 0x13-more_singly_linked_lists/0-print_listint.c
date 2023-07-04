@@ -10,15 +10,13 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	unsigned int count;
+	size_t len;
 
 	if (h == NULL)
 		return (0);
 
-	for (count = 0; h != NULL; count++)
-	{
+	for (len = 0; h != NULL; h = h->next, len++)
 		printf("%d\n", h->n);
-		h = h->next;
-	}
-	return (count);
+
+	return (len);
 }
