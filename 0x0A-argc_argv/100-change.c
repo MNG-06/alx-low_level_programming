@@ -11,28 +11,39 @@
  */
 int coinConverter(int i)
 {
-	int amount;
-	int leftover;
+		int cents, coins = 0;
 
-	if (argc == 1 || argc > 2)
+if (argc != 2)
+{
+	printf("Error\n");
+	return (1);
+}
+cents = atoi(argv[1]);
+while (cents > 0)
+{
+	coins++;
+	if ((cents - 25) >= 0)
 	{
-		printf("Error\n");
-		return (1);
+		cents -= 25;
+		continue;
 	}
-	leftover = atoi(argv[1]);
-	for (amount = 0; leftover > 0; amount++)
+	if ((cents - 10) >= 0)
 	{
-		if (leftover - 25 >= 0)
-			leftover = leftover - 25;
-		else if (leftover - 10 >= 0)
-			leftover = leftover - 10;
-		else if (leftover - 5 >= 0)
-			leftover = leftover - 5;
-		else if (leftover - 2 >= 0)
-			leftover = leftover - 2;
-		else if (leftover - 1 >= 0)
-			leftover = leftover - 1;
+		cents -= 10;
+		continue;
 	}
-	printf("%d\n", amount);
-	return (0);
+	if ((cents - 5) >= 0)
+	{
+		cents -= 5;
+		continue;
+	}
+	if ((cents - 2) >= 0)
+	{
+		cents -= 2;
+		continue;
+	}
+	cents--;
+}
+printf("%d\n", coins);
+return (0);
 }
