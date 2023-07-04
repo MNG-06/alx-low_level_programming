@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
-#include "main.h"
-#include <stderr.h>
+#include "main.h
 
 /**
  * coinConverter - Helping function that does all the mathematical calculations
@@ -12,7 +11,7 @@
  */
 int coinConverter(int i)
 {
-		int count = 0;
+	int count = 0;
 
 	while (i != 0)
 	{
