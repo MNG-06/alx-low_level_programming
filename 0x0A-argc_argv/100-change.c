@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
-#include "main.h
+#include "main.h"
 
 /**
  * coinConverter - Helping function that does all the mathematical calculations
