@@ -1,5 +1,5 @@
 #include <stdio.h>
-#iinclude "main.h"
+#include "main.h"
 
 /**
   * _strlen - Return the length of a string
