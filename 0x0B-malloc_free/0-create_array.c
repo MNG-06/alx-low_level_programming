@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * simple_print_buffer - A function that creates an array of chars
+ * create_array - A function that creates an array of chars
  * @buffer: the address of memory to print
  * @size: the size of the memory to print
  *
@@ -11,7 +11,7 @@
  */
 char *create_array(unsigned int size, char c)
 {
-  unsigned int i;
+  	unsigned int i;
 	char *heap_array;
 
 	if (size == 0)
