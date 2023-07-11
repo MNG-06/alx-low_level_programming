@@ -3,15 +3,15 @@
 #include "main.h"
 
 /**
- * create_array - A function that creates an array of chars
- * @buffer: the address of memory to print
+ * create_array - A function that creates an array of chars.
+ * @c: char to initialize the array with
  * @size: the size of the memory to print
  *
  * Return: Nothing.
  */
 char *create_array(unsigned int size, char c)
 {
-  	unsigned int i;
+	unsigned int i;
 	char *heap_array;
 
 	if (size == 0)
