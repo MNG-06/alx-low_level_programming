@@ -102,8 +102,9 @@ Write a function that reallocates a memory block using malloc and free
     Don’t forget to free ptr when it makes sense
 
 FYI: The standard library provides a different function: realloc. Run man realloc to learn more.
-5. We must accept finite disappointment, but never lose infinite hope
 
+5. We must accept finite disappointment, but never lose infinite hope
+   
 Write a program that multiplies two positive numbers.
 
     Usage: mul num1 num2
