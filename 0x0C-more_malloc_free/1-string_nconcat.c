@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+unsigned int length(char *s1);
 
 /**
  * string_nconcat - A function that concatenates two strings.
@@ -11,24 +12,45 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *p;
-	unsigned int s1count, s2count, sizeBuffer, i;
+	cnt i;
+	unsigned int j;
+	unsigned int len;
+	char *heap_array;
 
+	/* Initializing to an empty string if value is NULL*/
 	if (s1 == NULL)
 		s1 = "";
-	if (s2 == NULL)
+	if (s1 == NULL)
 		s2 = "";
-	for (s1count = 0; s1[s1count]; s1count++)
-		;
-	for (s2count = 0; s2[s2count]; s2count++)
-		;
-	s2count > n ? (s2count = n) : (n = s2count);
-	sizeBuffer = s1count + s2count + 1;
-	p = malloc(sizeBuffer * sizeof(char));
-	if (p == NULL)
+	len = length(s1);
+	heap_array = malloc((len + n + 1) * sizeof(char));
+	if (heap_array == NULL)
 		return (NULL);
-	for (i = 0; i < sizeBuffer - 1; i++)
-		i < s1count ? (p[i] = s1[i]) : (p[i] = s2[i - s1count]);
-	p[sizeBuffer] = '\0';
-	return (p);
+	len = length(s2);
+	if (n >= len)
+		n = len;
+	/*Populating the new array with values*/
+	for (i = 0; s1[i] != '\0'; i++)
+		heap_array[i] = s1[i];
+	for (j = 0; j < n; j++, i++)
+		heap_array[i] = s2[j];
+	heap_array[i] = '\0';
+	return (heap_array);
+}
+
+/**
+ * length - Calculates the length of a string
+ * @s1: The string
+ * Return: The length of a string as an integer
+ */
+unsigned int length(char *s1)
+{
+	unsigned int i;
+
+	if (s1 == NULL)
+		return (0);
+	for (i = 0; s1[i] !=  '\0'; i++)
+	{}
+
+	return (i);
 }
