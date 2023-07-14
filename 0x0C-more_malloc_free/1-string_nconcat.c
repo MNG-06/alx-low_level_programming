@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-unsigned int length(char *s1);
+/*unsigned int length(char *s1);*/
 
 /**
  * string_nconcat - A function that concatenates two strings.
