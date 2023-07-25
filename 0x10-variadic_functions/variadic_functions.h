@@ -4,10 +4,18 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-typedef struct printer{
-char *symbol;
-void (*print)(va_list arg);
-} printer_t;
+/**
+ * struct funckey - a key for picking functions to use for printing
+ * in 3-print_all.c
+ *
+ * @f: function to use for printing
+ * @spec: character specifier
+ */
+typedef struct funckey
+{
+	void (*f)(va_list);
+	char spec;
+} funckey;
 
 
 int sum_them_all(const unsigned int n, ...);
