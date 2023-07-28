@@ -6,12 +6,10 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t i;
+	unsigned int i = 0;
+	const list_t *temp_h = h;
 
-	for (i = 0; h; i++)
-	{
-		printf("[%d] %s\n", h->len, h->str);
-		h = h->next;
-	}
+	for (; temp_h; temp_h = temp_h->next, i++)
+		printf("[%d] %s\n", temp_h->len, temp_h->str);
 	return (i);
 }
