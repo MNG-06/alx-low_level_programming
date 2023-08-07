@@ -1,4 +1,5 @@
 #include "main.h"
+#define BUFSIZE 1204
 
 /**
   * main - entry point
