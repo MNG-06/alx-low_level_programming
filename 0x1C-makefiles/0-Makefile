@@ -1,0 +1,2 @@
+all:
+	gcc main.c alxse.c -o alxse
